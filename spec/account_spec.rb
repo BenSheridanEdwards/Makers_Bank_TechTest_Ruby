@@ -32,6 +32,7 @@ describe Account do
       allow(transaction).to receive(:debit).with(1000.00, "01/01/2020", 1000.00).and_return([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
       allow(statement).to receive(:add).with(transaction.debit(1000.00, "01/01/2020", 1000.00))
       allow(transaction).to receive(:credit).with(500.00, "01/01/2020", 500.00).and_return([date: "01/01/2020", credit: 500.00, debit: nil, balance: 500.00])
+      allow(statement).to receive(:add).with(transaction.credit(500.00, "01/01/2020", 500.00))
     end
 
     it 'descreases the account balance by a given amount' do
@@ -53,6 +54,7 @@ describe Account do
       allow(transaction).to receive(:debit).with(2000.00, "01/01/2020", 3000.00).and_return([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 3000.00])
       allow(statement).to receive(:add).with(transaction.debit(2000.00, "01/01/2020", 3000.0))
       allow(transaction).to receive(:credit).with(500.00, "01/01/2020", 2500.00).and_return([date: "01/01/2020", credit: 500.00, debit: nil, balance: 2500.00])
+      allow(statement).to receive(:add).with(transaction.credit(500.00, "01/01/2020", 2500.0))
     end
     
     it 'should return a remaining balance of 2500.00' do

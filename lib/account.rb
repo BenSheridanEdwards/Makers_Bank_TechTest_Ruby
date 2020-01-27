@@ -11,13 +11,14 @@ class Account
   def deposit(amount, date)
     @balance += amount
     @date = date
-    @statement.add(@transaction.debit(amount, "01/01/2020", @balance))
-    return @transaction.debit(amount, "01/01/2020", @balance)
+    @statement.add(@transaction.debit(amount, date, @balance))
+    return @transaction.debit(amount, date, @balance)
   end
 
   def withdraw(amount, date)
     @balance -= amount
     @date = date
-    return @transaction.credit(amount, "01/01/2020", @balance)
+    @statement.add(@transaction.credit(amount, date, @balance))
+    return @transaction.credit(amount, date, @balance)
   end
 end
