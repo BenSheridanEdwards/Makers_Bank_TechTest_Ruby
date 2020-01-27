@@ -1,6 +1,5 @@
 class Account
-
-  attr_reader :balance
+  attr_reader :balance, :statement
 
   def initialize(transaction = Transaction.new, statement = Statement.new)
     @balance = 0.00
