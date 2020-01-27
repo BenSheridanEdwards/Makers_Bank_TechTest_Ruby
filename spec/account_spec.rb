@@ -4,7 +4,7 @@ describe Account do
 
   let(:transaction) { double :transaction }
   let(:statement) { double :statement }
-  subject(:account) { Account.new(transaction) }
+  subject(:account) { Account.new(transaction, statement) }
 
   it "Initializes with a zero balance, and returns it when called" do
     expect(subject.balance).to eq(0.00)
