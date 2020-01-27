@@ -11,6 +11,7 @@ class Account
   def deposit(amount, date)
     @balance += amount
     @date = date
+    @statement.add(@transaction.debit(amount, "01/01/2020", @balance))
     return @transaction.debit(amount, "01/01/2020", @balance)
   end
 
