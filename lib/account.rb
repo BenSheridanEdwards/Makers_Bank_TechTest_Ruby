@@ -2,7 +2,7 @@ class Account
 
   attr_reader :balance
 
-  def initialize(balance = 500)
+  def initialize(balance)
     @balance = balance
   end
 
