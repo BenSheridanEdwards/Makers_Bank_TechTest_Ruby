@@ -22,7 +22,7 @@ describe Account do
     end
 
     it 'returns a summary of the tranaction' do
-      expect(subject.deposit(2000.00, "01/01/2020")).to eq ([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
+      expect(subject.deposit(2000.00, "01/01/2020")).to eq([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
     end
   end
 
@@ -40,7 +40,7 @@ describe Account do
 
     it 'returns a summary of the tranaction' do
       account.deposit(1000.00, "01/01/2020")
-      expect(subject.withdraw(500.00, "01/01/2020")).to eq ([date: "01/01/2020", credit: 500.00, debit: nil, balance: 500.00])
+      expect(subject.withdraw(500.00, "01/01/2020")).to eq([date: "01/01/2020", credit: 500.00, debit: nil, balance: 500.00])
     end
   end
 
