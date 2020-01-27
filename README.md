@@ -3,7 +3,7 @@
 Bank
 -
 
-[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Installation Instructions](#Installation) | [Feature Tests](#Feature_Tests) | [Objects & Methods](#Methods) |
+[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Installation Instructions](#Installation) | [Feature Test](#Feature_Tests) | [Objects & Methods](#Methods) |
 
 
 ## <a name="Outline">Test Outline</a>
