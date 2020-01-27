@@ -64,7 +64,7 @@ I'd like to see the date, amounts in/out and my balance for each transaction on 
 Clone the repository from github then change directory into it.
 
 ```
-$ git clone git@github.com:BenSheridanEdwards/Makers_Bank_TechTest_Ruby.git
+$ git clone https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby.git
 $ cd Makers_Bank_TechTest_Ruby
 ```
 Load dependencies with bundle.
