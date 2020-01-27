@@ -4,7 +4,6 @@ describe Statement do
 
   subject(:statement) { Statement.new }
   let(:transaction) { double :transaction }
-  let(:account) { double :account, balance: 0.00 }
 
   describe '#add' do
     it 'adds deposit transactions to the transaction log' do
@@ -25,11 +24,8 @@ describe Statement do
   describe '#print' do
     before(:each) do
       allow(transaction).to receive(:debit).with(1000.00, "10/01/2012", 1000.00).and_return([date: "10/01/2012", credit: nil, debit: 1000.00, balance: 1000.00])
-    # deposit1 = transaction.debit(1000.00, "10/01/2012", 1000.00)
       allow(transaction).to receive(:debit).with(2000.00, "13/01/2012", 3000.00).and_return([date: "13/01/2012", credit: nil, debit: 2000.00, balance: 3000.00])
-    # deposit2 = transaction.debit(2000.00, "13/01/2012", 3000.00)
       allow(transaction).to receive(:credit).with(500.00, "14/01/2012", 2500.00).and_return([date: "14/01/2012", credit: 500.00, debit: nil, balance: 2500.00])
-    # withdrawal = transaction.credit(500.00, "14/01/2012", 2500.00)
     end
 
     it 'prints out the transaction log' do
