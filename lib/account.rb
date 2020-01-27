@@ -4,6 +4,7 @@ class Account
 
   def initialize
     @balance = 0.00
+  # @statement = Statement.new
   end
 
   def deposit(amount, date)

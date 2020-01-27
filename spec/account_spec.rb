@@ -8,10 +8,14 @@ describe Account do
     expect(subject.balance).to eq(0.00)
   end
 
+  # it "Initializes with a statement object, and returns to when called" do
+  #   expect(subject.statement).to be)be_an_instance_of(Statement)
+  # end
+
   describe '#deposit' do
     it 'increases the account balance by a given amount' do
-      account.deposit(2000.00, "01/01/2020")
-      expect(account.balance).to eq(2000.00)
+      subject.deposit(2000.00, "01/01/2020")
+      expect(subject.balance).to eq(2000.00)
     end
 
     # it 'returns a transaction detailing the date, tranaction type, amount and balance' do
