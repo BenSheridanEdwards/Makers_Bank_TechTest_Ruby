@@ -24,14 +24,6 @@ describe Account do
     it 'returns a summary of the tranaction' do
       expect(subject.deposit(2000.00, "01/01/2020")).to eq ([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
     end
-
-    # it 'returns a transaction detailing the date, tranaction type, amount and balance' do
-    #   tranaction = account.deposit(2000.00, 01/01/2020)
-    #   expect(transaction[:date]).to eq "01/01/2020"
-    #   expect(transaction[:credit]).to eq nil
-    #   expect(tranaction[:debit]).to eq "2000.00"
-    #   expect(tranaction[:balance]).to eq "3000.00"
-    # end
   end
 
   describe '#withdraw' do
