@@ -77,4 +77,4 @@ Load the app in IRB.
 
 ## <a name="Feature_Tests">Feature Test</a>
 
-[](IRB_Feature_Test.png)
+![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Feature_Test.png)
