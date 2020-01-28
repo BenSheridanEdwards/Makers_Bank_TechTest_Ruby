@@ -28,7 +28,7 @@ describe Statement do
       allow(transaction).to receive(:credit).with(500.00, "14/01/2012", 2500.00).and_return([date: "14/01/2012", credit: 500.00, debit: nil, balance: 2500.00])
     end
 
-    it 'prints out the transaction log' do
+    it 'prints out the transaction log in reverse chromological order' do
       deposit1 = transaction.debit(1000.00, "10/01/2012", 1000.00)
       subject.add(deposit1)
       deposit2 = transaction.debit(2000.00, "13/01/2012", 3000.00)
