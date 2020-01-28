@@ -87,10 +87,10 @@ Error if amount given is 0 or negative:
 
 Error if requested amount to be withdrawn is more than available balance:
 
-![]()
+![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Balance_Error_Feature_Test.png)
 
 Error if date entered is in an invalid format:
 
-![]()
+![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Date_Errors_Feature_Test.png)
 
 ## <a name="Methods">Classes & Methods</a>
