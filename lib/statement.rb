@@ -11,6 +11,13 @@ class Statement
 
   def print
     return "date || credit || debit || balance\n" +
-    @transaction_log.flatten.reverse.map { |transaction| "#{transaction[:date]} || #{"%.2f" % transaction[:credit] if transaction[:credit]} || #{"%.2f" % transaction[:debit] if transaction[:debit]} || #{"%.2f" % transaction[:balance]}" }.join("\n")
+    @transaction_log.flatten.reverse.map do |transaction| 
+      "%<date>s || %<credit>s || %<debit>s || %<balance>.2f" % {
+      date: transaction[:date],
+      credit: ("%.2f" % transaction[:credit] if transaction[:credit]),
+      debit: ("%.2f" % transaction[:debit] if transaction[:debit]),
+      balance: transaction[:balance]
+    }
+    end.join("\n")
   end
 end
