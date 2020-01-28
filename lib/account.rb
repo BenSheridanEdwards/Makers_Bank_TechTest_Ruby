@@ -8,6 +8,8 @@ class Account
   end
 
   def deposit(amount, date)
+    raise "Error: Please enter a positive amount" if amount_not_positive(amount)
+
     @balance += amount
     @date = date
     @statement.add(@transaction.debit(amount, date, @balance))
@@ -19,5 +21,11 @@ class Account
     @date = date
     @statement.add(@transaction.credit(amount, date, @balance))
     return @transaction.credit(amount, date, @balance)
+  end
+
+  private 
+
+  def amount_not_positive(amount) 
+    amount <= 0
   end
 end
