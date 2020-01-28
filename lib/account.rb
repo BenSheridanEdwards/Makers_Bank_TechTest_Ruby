@@ -14,7 +14,7 @@ class Account
     return @transaction.debit(amount, date, @balance)
   end
 
-  def withdraw(amount, date)
+  def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
     @balance -= amount
     @date = date
     @statement.add(@transaction.credit(amount, date, @balance))
