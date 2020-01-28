@@ -94,3 +94,25 @@ Error if date entered is in an invalid format:
 ![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Date_Errors_Feature_Test.png)
 
 ## <a name="Methods">Classes & Methods</a>
+
+### Account
+
+| Methods | Description |
+| --- | --- |
+| Account.new     | Creates a new instance of an Account |
+| .deposit(amount, date) | Attempts a positive amount and date (eg: 01/01/2020) to update the account balance and returns the formatted transaction visible on the account statement. If no date is given it automaticly sets to today's date |
+| .withdraw(amount, date) | Attempts a positive amount and date (eg: 01/01/2020) to update the account balance and returns the formatted transaction visible on the account statement. If no date is given it automaticly sets to today's date |
+
+### Transaction
+
+| Methods | Description |
+| --- | --- |
+| .debit(amount, date, balance) | save the deposit transaction to the accounts statement |
+| .credit(amount, date, balance) | save the withdrawal transaction to the accounts statement | 
+
+### Statement
+
+| Methods | Description |
+| --- | --- |
+| .add(transaction) | Accepts a transaction object as a parameter and adds this to the transaction_log
+| .print | Prints the transaction log in a table headed by Date, Credit, Debit, and Balance. Showing transactions in reverse chromological order |
