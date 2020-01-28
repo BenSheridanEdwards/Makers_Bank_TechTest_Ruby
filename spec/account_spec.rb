@@ -7,7 +7,7 @@ describe Account do
   subject(:account) { Account.new(transaction, statement) }
 
   it "Initializes with a zero balance, and returns it when called" do
-    expect(subject.balance).to eq(0.00)
+    expect(account.balance).to eq(0.00)
   end
 
   describe '#deposit' do
@@ -18,17 +18,17 @@ describe Account do
     end
 
     it 'increases the account balance by a given amount' do
-      subject.deposit(2000.00, "01/01/2020")
-      expect(subject.balance).to eq(2000.00)
+      account.deposit(2000.00, "01/01/2020")
+      expect(account.balance).to eq(2000.00)
     end
 
     it 'returns a summary of the tranaction' do
-      expect(subject.deposit(2000.00, "01/01/2020")).to eq([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
+      expect(account.deposit(2000.00, "01/01/2020")).to eq([date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00])
     end
 
     it 'raises an error if the amount is 0 or below' do
       message = "Error: Please enter a positive amount"
-      expect { subject.deposit(0.00, "01/01/2020") }.to raise_error message
+      expect { account.deposit(0.00, "01/01/2020") }.to raise_error message
     end
   end
 
