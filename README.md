@@ -73,7 +73,7 @@ $ gem install bundle
 $ bundle
 ```
 
-Load the app in IRB.
+Load the app in IRB, require the account, transaction, and statement files, create a new account with "account = Account.new", then use the class [methods](#Methods) below.
 
 ## <a name="Feature_Tests">Feature Tests</a>
 
