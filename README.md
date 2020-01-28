@@ -59,7 +59,7 @@ As a user, so I can get an overview of my spending,
 I'd like to see the date, amounts in/out and my balance for each transaction on my bank statement.
 ```
 
-## <a name="Approach>Approach & Code Structure</a>
+## <a name="Approach">Approach</a>
 
 For this challenge, I felt the best way to approach my banking application was to look at the expected user input and application output.
 
