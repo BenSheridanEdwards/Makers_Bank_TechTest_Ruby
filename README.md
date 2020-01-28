@@ -71,7 +71,7 @@ Output:
 - Transaction Data, including the date, transaction type, and remaining balance.
 - A printed statement, showcasing all the processed transactions for the account, shown in reverse chromological order.
 
-To achieve this, I've separated my code into three distinct classes, with single responsibilities would be best. 
+To achieve this, I've separated my code into three distinct classes, each with as close to a single responsibility as I felt would be practical.
 
 Account = Deals with the balance, whilst supplying the client's data to the other classes.
 
