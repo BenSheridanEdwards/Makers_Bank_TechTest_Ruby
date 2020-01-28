@@ -75,7 +75,7 @@ $ bundle
 
 Load the app in IRB.
 
-## <a name="Feature_Tests">Feature Test</a>
+## <a name="Feature_Tests">Feature Tests</a>
 
 Successful deposit and withdrawal:
 
