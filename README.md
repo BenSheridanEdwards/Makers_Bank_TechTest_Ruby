@@ -3,7 +3,7 @@
 Bank
 -
 
-[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Installation Instructions](#Installation) | [Feature Test](#Feature_Tests) | [Objects & Methods](#Methods) |
+[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Approach & Code Structure](#Approach) | [Installation Instructions](#Installation) | [Feature Test](#Feature_Tests) | [Classes & Methods](#Methods) |
 
 
 ## <a name="Outline">Test Outline</a>
@@ -59,6 +59,26 @@ As a user, so I can get an overview of my spending,
 I'd like to see the date, amounts in/out and my balance for each transaction on my bank statement.
 ```
 
+## <a name="Approach>Approach & Code Structure</a>
+
+For this challenge, I felt the best way to approach my banking application was to look at the expected user input and application output.
+
+Input:
+- Given amounts to be deposited and withdrawn from the account.
+- Given dates to specify when the transaction did or will take place.
+
+Output:
+- Transaction Data, including the date, transaction type, and remaining balance.
+- A printed statement, showcasing all the processed transactions for the account, shown in reverse chromological order.
+
+To achieve this, I've separated my code into three distinct classes, with single responsibilities would be best. 
+
+Account = Deals with the balance, whilst supplying the client's data to the other classes.
+
+Transaction = Formats the data for each of the account's transactions, to return this information as confirmation of the transaction to the user, whilst also making the data easily accessable to the statement.
+
+Statement = Prints the transaction log, in reverse chronological order.
+
 ## <a name="Installation">Installation Instructions</a>
 
 Clone the repository from github then change directory into it.
@@ -102,6 +122,7 @@ Error if date entered is in an invalid format:
 | Account.new     | Creates a new instance of an Account |
 | .deposit(amount, date) | Attempts a positive amount and date (eg: 01/01/2020) to update the account balance and returns the formatted transaction visible on the account statement. If no date is given it automaticly sets to today's date |
 | .withdraw(amount, date) | Attempts a positive amount and date (eg: 01/01/2020) to update the account balance and returns the formatted transaction visible on the account statement. If no date is given it automaticly sets to today's date |
+| .statement.print | Prints a account statement with all the transactions made |
 
 ### Transaction
 
