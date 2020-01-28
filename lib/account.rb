@@ -1,3 +1,5 @@
+require 'date'
+
 class Account
   attr_reader :balance, :statement
 
@@ -7,8 +9,10 @@ class Account
     @statement = statement
   end
 
-  def deposit(amount, date)
+  def deposit(amount, date = Time.now.strftime("%d/%m/%Y"))
     raise "Error: Please enter a positive amount" if not_positive(amount)
+
+    raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
 
     @balance += amount
     @date = date
@@ -19,6 +23,10 @@ class Account
   def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
     raise "Error: Can't withdraw more than balance, %<balance>.2f" % {
     balance: @balance } if balance_less_than(amount)
+
+    raise "Error: Please enter a positive amount" if not_positive(amount)
+
+    raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
 
     @balance -= amount
     @date = date
@@ -34,5 +42,13 @@ class Account
 
   def balance_less_than(amount)
     amount > @balance
+  end
+
+  def valid_date?(date)
+    date_format = '%d/%m/%Y'
+    DateTime.strptime(date, date_format)
+    true
+    rescue ArgumentError
+      false
   end
 end
