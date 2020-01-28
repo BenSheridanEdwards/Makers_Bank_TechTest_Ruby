@@ -77,7 +77,7 @@ Load the app in IRB.
 
 ## <a name="Feature_Tests">Feature Tests</a>
 
-Successful deposit and withdrawal:
+Successful deposit, withdrawal and printing of the account statement:
 
 ![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Successful_Feature_Test.png)
 
