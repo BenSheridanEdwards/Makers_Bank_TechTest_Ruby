@@ -58,7 +58,7 @@ describe Account do
     end
   end
 
-  context 'When a client starts their account with 1000.00, despoits 2000.00, then withdraws 500.00' do
+  context 'When a client deposits 1000.00, then despoits 2000.00, then withdraws 500.00' do
     before(:each) do
       allow(transaction).to receive(:debit).with(1000.00, "01/01/2020", 1000.00).and_return([date: "01/01/2020", credit: nil, debit: 1000.00, balance: 1000.00])
       allow(statement).to receive(:add).with(transaction.debit(1000.00, "01/01/2020", 1000.00))
@@ -73,6 +73,12 @@ describe Account do
       account.deposit(2000.00, "01/01/2020")
       account.withdraw(500.00, "01/01/2020")
       expect(account.balance).to eq(2500.00)
+    end
+
+    it 'should not raise any errors' do
+      expect { account.deposit(1000.00, "01/01/2020") }.not_to raise_error
+      account.deposit(2000.00, "01/01/2020")
+      expect { account.withdraw(500.00, "01/01/2020") }.not_to raise_error
     end
   end
 end
