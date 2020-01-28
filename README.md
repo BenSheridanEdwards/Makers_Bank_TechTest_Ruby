@@ -79,11 +79,11 @@ Load the app in IRB.
 
 Successful deposit and withdrawal:
 
-![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Feature_Test.png)
+![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Successful_Feature_Test.png)
 
 Error if amount given is 0 or negative:
 
-![]()
+![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Amount_Errors_Feature_Test.png)
 
 Error if requested amount to be withdrawn is more than available balance:
 
