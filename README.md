@@ -77,4 +77,20 @@ Load the app in IRB.
 
 ## <a name="Feature_Tests">Feature Test</a>
 
+Successful deposit and withdrawal:
+
 ![](https://github.com/BenSheridanEdwards/Makers_Bank_TechTest_Ruby/blob/master/IRB_Feature_Test.png)
+
+Error if amount given is 0 or negative:
+
+![]()
+
+Error if requested amount to be withdrawn is more than available balance:
+
+![]()
+
+Error if date entered is in an invalid format:
+
+![]()
+
+## <a name="Methods">Classes & Methods</a>
