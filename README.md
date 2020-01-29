@@ -3,7 +3,7 @@
 Bank
 -
 
-[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Approach & Code Structure](#Approach) | [Installation Instructions](#Installation) | [Feature Test](#Feature_Tests) | [Classes & Methods](#Methods) |
+[Test Outline](#Outline) | [Specification](#Specification) | [User Stories](#Story) | [Approach & Code Structure](#Approach) | [Installation Instructions](#Installation) | [Unit Testing](#Unit_Testing) | [Classes & Methods](#Methods) |
 
 
 ## <a name="Outline">Test Outline</a>
@@ -93,9 +93,15 @@ $ gem install bundle
 $ bundle
 ```
 
+Run Rspec for tests and coverage, then rubocop for linting
+```
+$ rspec
+$ rubocop
+```
+
 Load the app in IRB, require the account, transaction, and statement files, create a new account with "account = Account.new", then use the class [methods](#Methods) below.
 
-## <a name="Feature_Tests">Feature Tests</a>
+## <a name="Unit_Testng">Unit Testing</a>
 
 Successful deposit, withdrawal and printing of the account statement:
 
