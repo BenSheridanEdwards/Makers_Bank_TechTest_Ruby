@@ -1,4 +1,6 @@
 require 'date'
+require_relative './transaction'
+require_relative './statement'
 
 class Account
   attr_reader :balance, :statement
@@ -15,7 +17,6 @@ class Account
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
 
     @balance += amount
-    @date = date
     @statement.add(@transaction.debit(amount, date, @balance))
     return @transaction.debit(amount, date, @balance)
   end
@@ -27,9 +28,8 @@ class Account
     raise "Error: Please enter a positive amount" if not_positive(amount)
 
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
-
+    
     @balance -= amount
-    @date = date
     @statement.add(@transaction.credit(amount, date, @balance))
     return @transaction.credit(amount, date, @balance)
   end

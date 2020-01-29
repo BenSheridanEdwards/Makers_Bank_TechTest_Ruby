@@ -6,10 +6,6 @@ describe Account do
   let(:statement) { double :statement }
   subject(:account) { Account.new(transaction, statement) }
 
-  it "Initializes with a zero balance, and returns it when called" do
-    expect(account.balance).to eq(0.00)
-  end
-
   describe '#deposit' do
     
     before(:each) do
