@@ -93,6 +93,12 @@ $ gem install bundle
 $ bundle
 ```
 
+Run Rspec for tests and coverage, then rubocop for linting
+```
+$ rspec
+$ rubocop
+```
+
 Load the app in IRB, require the account, transaction, and statement files, create a new account with "account = Account.new", then use the class [methods](#Methods) below.
 
 ## <a name="Unit_Testng">Unit Testing</a>
