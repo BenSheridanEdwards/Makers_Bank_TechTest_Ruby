@@ -15,8 +15,8 @@ describe Account do
     end
 
     it 'returns a summary of the tranaction' do
-      expect(statement).to receive(:add).with(2000.00, "01/01/2020", 2000.00, "debit").and_return({date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00})
-      expect(account.deposit(2000.00, "01/01/2020")).to eq({date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00})
+      expect(statement).to receive(:add).with(2000.00, "01/01/2020", 2000.00, "debit").and_return({ date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00 })
+      expect(account.deposit(2000.00, "01/01/2020")).to eq({ date: "01/01/2020", credit: nil, debit: 2000.00, balance: 2000.00 })
     end
 
     it 'raises an error if the amount is 0 or below' do
@@ -38,9 +38,9 @@ describe Account do
 
     it 'descreases the account balance by a given amount' do
       account.deposit(1000.00, "01/01/2020")
-      expect(account.balance).to eq (1000.00)
+      expect(account.balance).to eq 1000.00
       account.withdraw(500.00, "01/01/2020")
-      expect(account.balance).to eq(500.00)
+      expect(account.balance).to eq 500.00
     end
 
     it 'raises an error if the amount is more than the available balance' do
