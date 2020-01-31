@@ -1,10 +1,10 @@
-class Transaction
+module Transaction
 
-  def debit(amount, date, balance)
-    return [date: date, credit: nil, debit: amount, balance: balance]
+  def self.debit(amount, date, balance, statement)
+    statement.add([date: date, credit: nil, debit: amount, balance: balance])
   end
 
-  def credit(amount, date, balance)
-    return [date: date, credit: amount, debit: nil, balance: balance]
+  def self.credit(amount, date, balance, statement)
+    statement.add([date: date, credit: amount, debit: nil, balance: balance])
   end
 end

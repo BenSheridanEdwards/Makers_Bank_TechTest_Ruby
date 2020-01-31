@@ -3,11 +3,9 @@ require_relative './transaction'
 require_relative './statement'
 
 class Account
-  attr_reader :balance, :statement
 
-  def initialize(transaction = Transaction.new, statement = Statement.new)
+  def initialize(statement = Statement.new)
     @balance = 0.00
-    @transaction = transaction
     @statement = statement
   end
 
@@ -17,8 +15,7 @@ class Account
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
 
     @balance += amount
-    @statement.add(@transaction.debit(amount, date, @balance))
-    return @transaction.debit(amount, date, @balance)
+    Transaction.debit(amount, date, @balance, @statement)
   end
 
   def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
@@ -30,8 +27,15 @@ class Account
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
     
     @balance -= amount
-    @statement.add(@transaction.credit(amount, date, @balance))
-    return @transaction.credit(amount, date, @balance)
+    Transaction.credit(amount, date, @balance, @statement)
+  end
+
+  def my_balance
+    @balance.to_f(2)
+  end
+
+  def print_statement
+    @statement.print
   end
 
   private 
