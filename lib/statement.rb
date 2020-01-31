@@ -4,12 +4,13 @@ class Statement
     @transaction_log = []
   end
 
-  def add(transaction)
-    @transaction_log << transaction
+  def add(amount, date, balance, type)
+    @transaction_log << deposit(amount, date, balance) if debit?(type)
+    @transaction_log << withdraw(amount, date, balance) if credit?(type)
   end
 
   def print
-    STDOUT.print "date || credit || debit || balance\n" << statement.map { |transaction| 
+    STDOUT.print "date || credit || debit || balance\n" << log.map { |transaction| 
       "%<date>s || %<credit>s || %<debit>s || %<balance>.2f" % {
         date: transaction[:date],
         credit: ("%.2f" % transaction[:credit] if transaction[:credit]),
@@ -19,9 +20,25 @@ class Statement
     }.join("\n")
   end
 
+  def log
+    @transaction_log.flatten.reverse
+  end
+
   private
 
-  def statement
-    @transaction_log.flatten.reverse
+  def deposit(amount, date, balance)
+    { date: date, credit: nil, debit: amount, balance: balance }
+  end
+
+  def withdraw(amount, date, balance)
+    { date: date, credit: amount, debit: nil, balance: balance }
+  end
+
+  def debit?(type)
+    type == "debit"
+  end
+
+  def credit?(type)
+    type == "credit"
   end
 end
