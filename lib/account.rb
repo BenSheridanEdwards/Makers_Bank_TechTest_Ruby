@@ -1,5 +1,4 @@
 require 'date'
-require_relative './transaction'
 require_relative './statement'
 
 class Account
@@ -15,7 +14,7 @@ class Account
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
 
     @balance += amount
-    Transaction.debit(amount, date, @balance, @statement)
+    @statement.add(amount, date, @balance, "debit")
   end
 
   def withdraw(amount, date = Time.now.strftime("%d/%m/%Y"))
@@ -27,11 +26,11 @@ class Account
     raise "Error: Invalid date, please use format DD/MM/YY" unless valid_date?(date)
     
     @balance -= amount
-    Transaction.credit(amount, date, @balance, @statement)
+    @statement.add(amount, date, @balance, "credit")
   end
 
-  def my_balance
-    @balance.to_f(2)
+  def balance
+    @balance.to_f
   end
 
   def print_statement
